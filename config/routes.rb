@@ -1,5 +1,10 @@
 Madlibs::Application.routes.draw do
 
+  root :to => "home#index"
+
+  post "home/create"
+  post "home/fill"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

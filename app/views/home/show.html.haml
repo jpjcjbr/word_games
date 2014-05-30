@@ -1,0 +1,10 @@
+%h1 New Mad Lib created
+
+%form{action: home_fill_path, method: "POST"}
+	- @madLib.parts_of_speech.each do |label, quantity|
+		- (1..quantity).each do |i|
+			%p
+				%label #{label.capitalize} (#{i}):
+				%input{name: "#{label}_#{i}"}
+	%input{type: "submit", value: "Fill in"}
+	%input{type: "hidden", value: @text, name: "mad_lib_text"}
